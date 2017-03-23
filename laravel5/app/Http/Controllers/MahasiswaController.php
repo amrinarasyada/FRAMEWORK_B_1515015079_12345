@@ -11,7 +11,8 @@ class MahasiswaController extends Controller
 {
     public function awal()
     {
-    	return "Hello Mahasiswa!! Selamat Mengerjakan Postest! XOXO";
+    	// return "Hello Mahasiswa!! Selamat Mengerjakan Postest! XOXO";
+         return view ('mahasiswa.awal',['data'=>Mahasiswa::all()]);
     }
     public function tambah()
     {
