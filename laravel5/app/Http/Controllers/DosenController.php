@@ -9,6 +9,16 @@ use App\dosen;
 
 class DosenController extends Controller
 {
+    public function dosen(){
+        $dosen = dosen::all();
+
+        foreach($dosen as $dsn){
+        echo "Nama : ".$dsn->nama;
+        echo "<br>";
+        echo "Username : ".$dsn->pengguna->username;
+        echo "<br>";
+        }
+    }
     public function awal()
     {
     	return "Selamat Datang Dosen!!! :)";

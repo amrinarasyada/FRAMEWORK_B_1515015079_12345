@@ -9,6 +9,20 @@ use App\DosenMataKuliah;
 
 class DosenMataKuliahController extends Controller
 {
+    public function DosenMataKuliah(){
+        $DosenMataKuliah = Dosen_MataKuliah::all();
+
+        foreach($DosenMataKuliah as $dsnmatkul){
+
+        echo "Nama Dosen : ".$dsnmatkul->dosen->nama;
+        echo "<br>";
+        echo "NIP : ".$dsnmatkul->dosen->nip;
+        echo "<br>";
+        echo "Mata Kuliah yang diajar : ".$dsnmatkul->matakuliah->title;
+        echo "<br>";
+        }
+    }
+
    public function awal()
     {
     	return "Ini Tabel Dosen MataKuliah. Salam dari DosenMataKuliahController";
