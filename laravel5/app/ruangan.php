@@ -6,9 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class ruangan extends Model
 {
-    public function JadwalMataKuliah(){
-    	return $this->hasMany(JadwalMataKuliah::class);
-    }
+    //
     protected $table = 'ruangan';
-    // protected $fillable = ['title'];
+    //protected $fillable = ['tittle'];
+    protected $guarded = ['id'];
+
+    public function jadwal_matakuliah() //membuat fungsi dengan nama jadwal_matakuliah
+    {
+    	return $this->hasMany(jadwal_matakuliah::class);
+    	//sintaks ini menghubungkan antara model ruangan dengan model jadwal_matakuliah, jadi kita bisa mengakses isi model jadwal_matakuliah melalui model ruangan. sintaks hasMany sendiri menandakan hubungan relasinya adalah many to many.
+    }
 }

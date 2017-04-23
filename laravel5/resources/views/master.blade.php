@@ -62,7 +62,7 @@
 				<li><a href="{{url('ruangan')}}"> Ruangan</a></li>	
 				<li><a href="{{url('matakuliah')}}"> Matakuliah</a></li>	
 			</ul>	
-				</li>			
+				</li><li><a href="{{ url('logout') }}">Logout</a>			
 			</ul>	
 		</div><!--/.nav-collapse -->		
 			</div>	
@@ -75,12 +75,21 @@
 			{{Session::get('informasi')}}		
 				</div>
 			@endif
+			@if(count($errors) > 0)
+			<div class="alert alert-danger">
+				<ul>
+					@foreach ($errors->all() as $error)
+					<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			</div>	
+			@endif
 			@yield('container')	
 		</div>
 		<nav class="navbar navbar-default navbar-fixed-bottom">
 		<footer class="container">
 			<!-- Please dont delete this -->
-			created by <a href="https://www.instagram.com/amrinarasyadaaa/"><span><i class="fa fa-instagram" style="color:#1da1f2"></i> @amrinarasyada</span></a>
+			created by <a href="https://www.facebook.com/amrinarasyadaaa"><span><i class="fa fa-facebook" style="color:#1da1f2"></i> @AmrinaRasyada</span></a>
 			<!--/ Please dont delete this -->
 		</footer>	
 		</nav>

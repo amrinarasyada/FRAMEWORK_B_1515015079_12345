@@ -2,22 +2,21 @@
 @section('container')
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<strong> Seluruh Mata Kuliah </strong>
-		<a href="{{url('matakuliah/tambah')}}" class="btn btn-xs btn-primary pull-right"><i class = "fa fa-plus"></i> matakuliah
-		 </a>
+		<strong> Seluruh Data matakuliah </strong>
+		<a href="{{url('matakuliah/tambah')}}" class="btn btn-xs btn-primary pull-right"><i class = "fa fa-plus"></i> matakuliah </a>
 	<div class="clearfix"></div>
 	</div>
 	<table class="table">
 		<thead>
 			<tr>
 				<th> No. </th>
-				<th> title </th>
-				<th> keterangan </th>
+				<th> Title </th>
+				<th> Keterangan </th>
 				<th> Aksi </th>
 			</tr>
 		</thead>
 		<tbody>
-			<?php $x=1;?>
+			<?php $x=(1+($data->CurrentPage()-1)*2);?>
 			@foreach ($data as $matakuliah)
 				<tr>
 					<td>{{ $x++ }}</td>
@@ -35,5 +34,9 @@
 				@endforeach
 		</tbody>
 	</table>
+</div>
+		
+<div align="center">
+	{{ $data->render() }}
 </div>
 @stop
